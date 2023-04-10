@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poinweb - Jasa Pembuatan Website Custom</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image" />
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+    <script src="assets/js/alpine.min.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar-wrapper fixed z-50 w-full">
+      <header
+        x-data="
+          {
+            navbarOpen: false
+          }
+        "
+        class="flex w-full items-center bg-white"
+      >
+        <div class="container mx-auto">
+          <div class="relative -mx-4 flex items-center justify-between">
+            <div class="w-60 max-w-full px-4">
+              <a href="javascript:void(0)" class="block w-full py-5">
+                <img src="assets/images/logo/logoNavbar.svg" alt="logo" class="w-full" />
+              </a>
+            </div>
+            <div class="flex w-full items-center justify-between px-4">
+              <div>
+                <button
+                  @click="navbarOpen = !navbarOpen"
+                  :class="navbarOpen && 'navbarTogglerActive'"
+                  id="navbarToggler"
+                  class="absolute right-4 top-1/2 block -translate-y-1/2 justify-center rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+                >
+                  <span class="relative my-[6px] block h-[2px] w-[30px] bg-body-color"></span>
+                  <span class="relative my-[6px] block h-[2px] w-[30px] bg-body-color"></span>
+                  <span class="relative my-[6px] block h-[2px] w-[30px] bg-body-color"></span>
+                </button>
+                <nav
+                  :class="!navbarOpen && 'hidden' "
+                  id="navbarCollapse"
+                  class="absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white/30 py-5 px-10 shadow backdrop-blur-lg lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none"
+                >
+                  <ul class="block lg:flex">
+                    <li>
+                      <a href="" class="flex py-2 text-[18px] font-semibold text-dark duration-300 hover:text-primary lg:ml-12 lg:inline-flex"> Profil </a>
+                    </li>
+                    <li>
+                      <a href="" class="flex py-2 text-[18px] font-semibold text-dark duration-300 hover:text-primary lg:ml-12 lg:inline-flex"> Portfolio </a>
+                    </li>
+                    <li>
+                      <a href="" class="flex py-2 text-[18px] font-semibold text-dark duration-300 hover:text-primary lg:ml-12 lg:inline-flex"> Paket & Harga </a>
+                    </li>
+                    <li>
+                      <a href="" class="flex py-2 text-[18px] font-semibold text-dark duration-300 hover:text-primary lg:ml-12 lg:inline-flex"> Petunjuk Order </a>
+                    </li>
+                    <li>
+                      <a href="" class="flex py-2 text-[18px] font-semibold text-dark duration-300 hover:text-primary lg:ml-12 lg:inline-flex"> F.A.Q </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+                <a href="" class="text-md rounded-lg bg-primary py-2 px-6 text-center font-normal text-white duration-300 hover:bg-opacity-90"> Hubungi Kami </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="relative bg-gradient-to-r from-[#cadae9] via-white to-slate-300 pt-[120px] pb-[110px] lg:pt-[210px]">
+        <div class="container mx-auto">
+          <div class="-mx-4 flex flex-wrap">
+            <div class="w-full px-4 lg:w-5/12">
+              <div class="hero-content">
+                <h1 class="mb-3 text-4xl font-bold leading-tight text-dark sm:text-[52px] lg:text-[50px] xl:text-[52px]">
+                  Jangkau potensi <br />
+                  terbesar bisnis anda <br />
+                  dengan Website Profesional!
+                </h1>
+                <p class="mb-8 max-w-[480px] text-base leading-relaxed text-body-color">
+                  Poinweb - tempat terbaik untuk membangun dan mengembangkan bisnis online Anda. Dengan layanan pembuatan website terbaik, kami memastikan Anda siap menghadapi persaingan digital yang ketat.
+                </p>
+                <ul class="flex flex-wrap items-center">
+                  <li>
+                    <a href="javascript:void(0)" class="inline-flex items-center justify-center rounded-lg bg-primary py-3 px-5 text-center text-[19px] font-medium text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"> Get Started </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hidden px-4 lg:block lg:w-1/12"></div>
+            <div class="w-full px-4 lg:w-6/12">
+              <div class="lg:ml-auto lg:text-right">
+                <div class="relative z-10 inline-block pt-11 lg:pt-0">
+                  <img src="assets/images/hero/hero-image-01.png" alt="hero" class="max-w-full lg:ml-auto" />
+                  <span class="absolute -left-8 -bottom-8 z-[-1]">
+                    <img src="assets/images/accents/hero.svg" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero End -->
+
+    <main id="main" class="main">
+      <!-- About -->
+      <section id="about" class="about overflow-hidden bg-gradient-to-r from-[#cadae9] via-white to-slate-300 pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+        <div class="container mx-auto">
+          <div class="-mx-4 flex flex-wrap items-center justify-between">
+            <div class="w-full px-4 lg:w-6/12">
+              <div class="-mx-3 flex items-center sm:-mx-4">
+                <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div class="py-3 sm:py-4">
+                    <img src="assets/images/about/image-1.jpg" alt="" class="w-full rounded-2xl" />
+                  </div>
+                  <div class="relative z-10 my-4">
+                    <div class="py-3 sm:py-4">
+                      <img src="assets/images/about/image-2.jpg" alt="" class="w-full rounded-2xl" />
+                      <span class="absolute -left-7 -top-1 z-[-1]">
+                        <img src="assets/images/accents/about.svg" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div class="relative z-10 my-4">
+                    <img src="assets/images/about/image-3.jpg" alt="" class="w-full rounded-2xl" />
+                    <span class="absolute -right-7 -bottom-7 z-[-1]">
+                      <img src="assets/images/accents/about.svg" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+              <div class="mt-10 lg:mt-0">
+                <span class="mb-2 block text-lg font-semibold text-primary"> Tentang Kami </span>
+                <h2 class="mb-6 text-[35px] font-bold text-dark sm:text-[43px]">Poinweb - tempat terbaik untuk membangun dan mengembangkan bisnis online Anda.</h2>
+                <p class="text-md mb-4 text-body-color">
+                  Poinweb berdiri sejak tahun 2018, berbekal ilmu dan konsep yang mumpuni untuk mendongkrak performa bisnis anda. Kami berkomitmen untuk selalu menjaga integritas serta kualitas produk digital untuk usaha perorangan, UMKM,
+                  maupun perusahaan dengan skala yang lebih besar.
+                </p>
+                <p class="text-md mb-6 text-body-color">Membantu meningkatkan <strong>profit</strong> dan <strong>efisiensi pemasaran</strong> melalui:</p>
+                <ol>
+                  <li class="mb-4 flex text-base text-body-color">
+                    <span class="mr-2 flex h-6 w-full max-w-[24px] items-center justify-center rounded bg-primary text-base text-white"> 1 </span>
+                    Pembuatan website, landing page, company profile, dan aplikasi web lainnya dengan kualitas premium.
+                  </li>
+                  <li class="mb-4 flex text-base text-body-color">
+                    <span class="mr-2 flex h-6 w-full max-w-[24px] items-center justify-center rounded bg-primary text-base text-white"> 2 </span>
+                    Membantu branding konten/produk yang anda miliki.
+                  </li>
+                  <li class="mb-4 flex text-base text-body-color">
+                    <span class="mr-2 flex h-6 w-full max-w-[24px] items-center justify-center rounded bg-primary text-base text-white"> 3 </span>
+                    Pemasaran digital menggunakan platform iklan melalui optimasi pada Search Engine Google, Google Ads, Meta/Facebook, Instagram, Tiktok, Youtube.
+                  </li>
+                </ol>
+                <!-- <a href="" class="inline-flex items-center justify-center rounded-lg bg-primary py-3 px-5 text-center text-[19px] font-medium text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"> Get Started </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About End -->
+
+      <!-- Portfolio -->
+      <section
+        id="portfolio"
+        x-data="
+        {
+          showCards: 'all',
+          activeClasses: 'bg-primary text-white',
+          inactiveClasses: 'text-body-color hover:bg-primary duration-300 hover:text-white',
+        }
+      "
+        class="portfolio bg-gradient-to-l from-[#cadae9] via-white to-slate-300 pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]"
+      >
+        <div class="container mx-auto">
+          <div class="-mx-4 flex flex-wrap">
+            <div class="w-full px-4">
+              <div class="mx-auto mb-[60px] max-w-[510px] text-center">
+                <span class="mb-2 block text-xl font-semibold text-primary"> Our Portfolio </span>
+                <h2 class="mb-4 text-[39px] font-bold text-dark sm:text-[45px] md:text-[50px]">Our Recent Projects</h2>
+                <p class="text-[20px] text-body-color">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.</p>
+              </div>
+            </div>
+          </div>
+          <div class="-mx-4 flex flex-wrap justify-center">
+            <div class="w-full px-4">
+              <ul class="mb-12 flex flex-wrap justify-center space-x-1">
+                <li class="mb-1">
+                  <button @click="showCards = 'all' " :class="showCards == 'all' ? activeClasses : inactiveClasses " class="inline-block rounded-lg py-2 px-5 text-center text-[20px] font-semibold transition md:py-3 lg:px-8">
+                    All Projects
+                  </button>
+                </li>
+                <li class="mb-1">
+                  <button @click="showCards = 'branding' " :class="showCards == 'branding' ? activeClasses : inactiveClasses " class="inline-block rounded-lg py-2 px-5 text-center text-[20px] font-semibold transition md:py-3 lg:px-8">
+                    Branding
+                  </button>
+                </li>
+                <li class="mb-1">
+                  <button @click="showCards = 'design' " :class="showCards == 'design' ? activeClasses : inactiveClasses " class="inline-block rounded-lg py-2 px-5 text-center text-[20px] font-semibold transition md:py-3 lg:px-8">
+                    Design
+                  </button>
+                </li>
+                <li class="mb-1">
+                  <button @click="showCards = 'marketing' " :class="showCards == 'marketing' ? activeClasses : inactiveClasses " class="inline-block rounded-lg py-2 px-5 text-center text-[20px] font-semibold transition md:py-3 lg:px-8">
+                    Marketing
+                  </button>
+                </li>
+                <li class="mb-1">
+                  <button @click="showCards = 'development' " :class="showCards == 'development' ? activeClasses : inactiveClasses " class="inline-block rounded-lg py-2 px-5 text-center text-[20px] font-semibold transition md:py-3 lg:px-8">
+                    Development
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="-mx-4 flex flex-wrap">
+            <div :class="showCards == 'all' || showCards == 'branding' ? 'block' : 'hidden' " class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div class="relative mb-12">
+                <div class="overflow-hidden rounded-lg">
+                  <img src="assets/images/portfolio/portfolio-01/image-01.jpg" alt="portfolio" class="w-full" />
+                </div>
+                <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
+                  <span class="mb-2 block text-lg font-semibold text-primary"> Branding </span>
+                  <h3 class="mb-4 text-[25px] font-bold text-dark">Branding Design</h3>
+                  <a href="javascript:void(0)" class="text-md inline-block rounded-md border py-3 px-7 font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white"> Live Preview </a>
+                </div>
+              </div>
+            </div>
+            <div :class="showCards == 'all' || showCards == 'marketing' ? 'block' : 'hidden' " class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div class="relative mb-12">
+                <div class="overflow-hidden rounded-lg">
+                  <img src="assets/images/portfolio/portfolio-01/image-02.jpg" alt="portfolio" class="w-full" />
+                </div>
+                <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
+                  <span class="mb-2 block text-lg font-semibold text-primary"> Marketing </span>
+                  <h3 class="mb-4 text-[25px] font-bold text-dark">Best Marketing tips</h3>
+                  <a href="javascript:void(0)" class="text-md inline-block rounded-md border py-3 px-7 font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white"> Live Preview </a>
+                </div>
+              </div>
+            </div>
+            <div :class="showCards == 'all' || showCards == 'development' ? 'block' : 'hidden' " class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div class="relative mb-12">
+                <div class="overflow-hidden rounded-lg">
+                  <img src="assets/images/portfolio/portfolio-01/image-03.jpg" alt="portfolio" class="w-full" />
+                </div>
+                <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
+                  <span class="mb-2 block text-lg font-semibold text-primary"> Development </span>
+                  <h3 class="mb-4 text-[25px] font-bold text-dark">Web Design Trend</h3>
+                  <a href="javascript:void(0)" class="text-md inline-block rounded-md border py-3 px-7 font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white"> Live Preview </a>
+                </div>
+              </div>
+            </div>
+            <div :class="showCards == 'all' || showCards == 'design' ? 'block' : 'hidden' " class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div class="relative mb-12">
+                <div class="overflow-hidden rounded-lg">
+                  <img src="assets/images/portfolio/portfolio-01/image-04.jpg" alt="portfolio" class="w-full" />
+                </div>
+                <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
+                  <span class="mb-2 block text-lg font-semibold text-primary"> Design </span>
+                  <h3 class="mb-4 text-[25px] font-bold text-dark">Business Card Design</h3>
+                  <a href="javascript:void(0)" class="text-md inline-block rounded-md border py-3 px-7 font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white"> Live Preview </a>
+                </div>
+              </div>
+            </div>
+            <div :class="showCards == 'all' || showCards == 'marketing' ? 'block' : 'hidden' " class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div class="relative mb-12">
+                <div class="overflow-hidden rounded-lg">
+                  <img src="assets/images/portfolio/portfolio-01/image-05.jpg" alt="portfolio" class="w-full" />
+                </div>
+                <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
+                  <span class="mb-2 block text-lg font-semibold text-primary"> Marketing </span>
+                  <h3 class="mb-4 text-[25px] font-bold text-dark">Digital marketing</h3>
+                  <a href="javascript:void(0)" class="text-md inline-block rounded-md border py-3 px-7 font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white"> Live Preview </a>
+                </div>
+              </div>
+            </div>
+            <div :class="showCards == 'all' || showCards == 'branding' ? 'block' : 'hidden' " class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div class="relative mb-12">
+                <div class="overflow-hidden rounded-lg">
+                  <img src="assets/images/portfolio/portfolio-01/image-06.jpg" alt="portfolio" class="w-full" />
+                </div>
+                <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
+                  <span class="mb-2 block text-lg font-semibold text-primary"> Branding </span>
+                  <h3 class="mb-4 text-[25px] font-bold text-dark">Creative Agency</h3>
+                  <a href="javascript:void(0)" class="text-md inline-block rounded-md border py-3 px-7 font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white"> Live Preview </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio End -->
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+        <div class="container mx-auto">
+          <div class="-mx-4 flex flex-wrap">
+            <div class="w-full px-4">
+              <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
+                <span class="mb-2 block text-lg font-semibold text-primary"> Pricing Table </span>
+                <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]">Our Pricing Plan</h2>
+                <p class="text-base text-body-color">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="-mx-4 flex flex-wrap justify-center">
+            <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+              <div class="relative z-10 mb-10 overflow-hidden rounded-xl border border-primary border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12">
+                <span class="mb-4 block text-lg font-semibold text-primary"> Personal </span>
+                <h2 class="mb-5 text-[42px] font-bold text-dark">
+                  $59
+                  <span class="text-base font-medium text-body-color"> / year </span>
+                </h2>
+                <p class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color">Perfect for using in a personal website or a client project.</p>
+                <div class="mb-7">
+                  <p class="mb-1 text-base leading-loose text-body-color">1 User</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">All UI components</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Lifetime access</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Free updates</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Use on 1 (one) project</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">3 Months support</p>
+                </div>
+                <a href="javascript:void(0)" class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-primary transition hover:border-primary hover:bg-primary hover:text-white">
+                  Choose Personal
+                </a>
+
+                <div>
+                  <span class="absolute right-0 top-7 z-[-1]">
+                    <img src="assets/images/accents/pricingGradient.svg" />
+                  </span>
+                  <span class="absolute right-4 top-4 z-[-1]">
+                    <img src="assets/images/accents/pricingDots.svg" />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+              <div class="relative z-10 mb-10 overflow-hidden rounded-xl border border-primary border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12">
+                <span class="mb-4 block text-lg font-semibold text-primary"> Business </span>
+                <h2 class="mb-5 text-[42px] font-bold text-dark">
+                  $199
+                  <span class="text-base font-medium text-body-color"> / year </span>
+                </h2>
+                <p class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color">Perfect for using in a Business website or a client project.</p>
+                <div class="mb-7">
+                  <p class="mb-1 text-base leading-loose text-body-color">5 Users</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">All UI components</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Lifetime access</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Free updates</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Use on 3 (Three) project</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">4 Months support</p>
+                </div>
+                <a href="javascript:void(0)" class="block w-full rounded-md border border-primary bg-primary p-4 text-center text-base font-semibold text-white transition hover:bg-opacity-90"> Choose Business </a>
+
+                <div>
+                  <span class="absolute right-0 top-7 z-[-1]">
+                    <img src="assets/images/accents/pricingGradient.svg" alt="" />
+                  </span>
+                  <span class="absolute right-4 top-4 z-[-1]">
+                    <img src="assets/images/accents/pricingDots.svg" />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+              <div class="relative z-10 mb-10 overflow-hidden rounded-xl border border-primary border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12">
+                <span class="mb-4 block text-lg font-semibold text-primary"> Professional </span>
+                <h2 class="mb-5 text-[42px] font-bold text-dark">
+                  $256
+                  <span class="text-base font-medium text-body-color"> / year </span>
+                </h2>
+                <p class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color">Perfect for using in a Professional website or a client project.</p>
+                <div class="mb-7">
+                  <p class="mb-1 text-base leading-loose text-body-color">Unlimited Users</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">All UI components</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Lifetime access</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Free updates</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">Use on Unlimited project</p>
+                  <p class="mb-1 text-base leading-loose text-body-color">12 Months support</p>
+                </div>
+                <a href="javascript:void(0)" class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-primary transition hover:border-primary hover:bg-primary hover:text-white">
+                  Choose Professional
+                </a>
+
+                <div>
+                  <span class="absolute right-0 top-7 z-[-1]">
+                    <img src="assets/images/accents/pricingGradient.svg" alt="" />
+                  </span>
+                  <span class="absolute right-4 top-4 z-[-1]">
+                    <img src="assets/images/accents/pricingDots.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pricing End -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gradient-to-r from-[#cadae9] via-white to-slate-300 pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+      <div class="container mx-auto">
+        <div class="-mx-4 flex flex-wrap">
+          <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+            <div class="mb-10 w-full">
+              <a href="" class="mb-6 inline-block max-w-[160px]">
+                <img src="assets/images/logo/logoNavbar.svg" alt="logo" class="max-w-full" />
+              </a>
+              <p class="mb-7 text-base text-body-color">Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem totam rem aperiam.</p>
+              <p class="flex items-center text-sm font-medium text-dark">
+                <span class="mr-3 text-primary">
+                  <img src="assets/images/accents/footer.svg" />
+                </span>
+                <span>+012 (345) 678 99</span>
+              </p>
+            </div>
+          </div>
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+            <div class="mb-10 w-full">
+              <h4 class="mb-9 text-lg font-semibold text-dark">Resources</h4>
+              <ul>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> SaaS Development </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Our Products </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> User Flow </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> User Strategy </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+            <div class="mb-10 w-full">
+              <h4 class="mb-9 text-lg font-semibold text-dark">Company</h4>
+              <ul>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> About TailGrids </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Contact & Support </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Success History </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Setting & Privacy </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+            <div class="mb-10 w-full">
+              <h4 class="mb-9 text-lg font-semibold text-dark">Quick Links</h4>
+              <ul>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Premium Support </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Our Services </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Know Our Team </a>
+                </li>
+                <li>
+                  <a href="" class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"> Download App </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
+            <div class="mb-10 w-full">
+              <h4 class="mb-9 text-lg font-semibold text-dark">Follow Us On</h4>
+              <div class="mb-6 flex items-center">
+                <a href="" class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
+                  <svg width="8" height="16" viewBox="0 0 8 16" class="fill-current">
+                    <path
+                      d="M7.43902 6.4H6.19918H5.75639V5.88387V4.28387V3.76774H6.19918H7.12906C7.3726 3.76774 7.57186 3.56129 7.57186 3.25161V0.516129C7.57186 0.232258 7.39474 0 7.12906 0H5.51285C3.76379 0 2.54609 1.44516 2.54609 3.5871V5.83226V6.34839H2.10329H0.597778C0.287819 6.34839 0 6.63226 0 7.04516V8.90323C0 9.26452 0.243539 9.6 0.597778 9.6H2.05902H2.50181V10.1161V15.3032C2.50181 15.6645 2.74535 16 3.09959 16H5.18075C5.31359 16 5.42429 15.9226 5.51285 15.8194C5.60141 15.7161 5.66783 15.5355 5.66783 15.3806V10.1419V9.62581H6.13276H7.12906C7.41688 9.62581 7.63828 9.41935 7.68256 9.10968V9.08387V9.05806L7.99252 7.27742C8.01466 7.09677 7.99252 6.89032 7.85968 6.68387C7.8154 6.55484 7.61614 6.42581 7.43902 6.4Z"
+                    />
+                  </svg>
+                </a>
+                <a href="" class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
+                  <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current">
+                    <path
+                      d="M14.2194 2.06654L15.2 0.939335C15.4839 0.634051 15.5613 0.399217 15.5871 0.2818C14.8129 0.704501 14.0903 0.845401 13.6258 0.845401H13.4452L13.3419 0.751468C12.7226 0.258317 11.9484 0 11.1226 0C9.31613 0 7.89677 1.36204 7.89677 2.93542C7.89677 3.02935 7.89677 3.17025 7.92258 3.26419L8 3.73386L7.45806 3.71037C4.15484 3.61644 1.44516 1.03327 1.00645 0.587084C0.283871 1.76125 0.696774 2.88845 1.13548 3.59296L2.0129 4.90802L0.619355 4.20352C0.645161 5.18982 1.05806 5.96477 1.85806 6.52838L2.55484 6.99804L1.85806 7.25636C2.29677 8.45401 3.27742 8.94716 4 9.13503L4.95484 9.36986L4.05161 9.93346C2.60645 10.8728 0.8 10.8024 0 10.7319C1.62581 11.7652 3.56129 12 4.90323 12C5.90968 12 6.65806 11.9061 6.83871 11.8356C14.0645 10.2857 14.4 4.41487 14.4 3.2407V3.07632L14.5548 2.98239C15.4323 2.23092 15.7935 1.8317 16 1.59687C15.9226 1.62035 15.8194 1.66732 15.7161 1.6908L14.2194 2.06654Z"
+                    />
+                  </svg>
+                </a>
+                <a href="" class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
+                  <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current">
+                    <path
+                      d="M15.6645 1.88018C15.4839 1.13364 14.9419 0.552995 14.2452 0.359447C13.0065 6.59222e-08 8 0 8 0C8 0 2.99355 6.59222e-08 1.75484 0.359447C1.05806 0.552995 0.516129 1.13364 0.335484 1.88018C0 3.23502 0 6 0 6C0 6 0 8.79263 0.335484 10.1198C0.516129 10.8664 1.05806 11.447 1.75484 11.6406C2.99355 12 8 12 8 12C8 12 13.0065 12 14.2452 11.6406C14.9419 11.447 15.4839 10.8664 15.6645 10.1198C16 8.79263 16 6 16 6C16 6 16 3.23502 15.6645 1.88018ZM6.4 8.57143V3.42857L10.5548 6L6.4 8.57143Z"
+                    />
+                  </svg>
+                </a>
+                <a href="" class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
+                  <svg width="14" height="14" viewBox="0 0 14 14" class="fill-current">
+                    <path
+                      d="M13.0214 0H1.02084C0.453707 0 0 0.451613 0 1.01613V12.9839C0 13.5258 0.453707 14 1.02084 14H12.976C13.5432 14 13.9969 13.5484 13.9969 12.9839V0.993548C14.0422 0.451613 13.5885 0 13.0214 0ZM4.15142 11.9H2.08705V5.23871H4.15142V11.9ZM3.10789 4.3129C2.42733 4.3129 1.90557 3.77097 1.90557 3.11613C1.90557 2.46129 2.45002 1.91935 3.10789 1.91935C3.76577 1.91935 4.31022 2.46129 4.31022 3.11613C4.31022 3.77097 3.81114 4.3129 3.10789 4.3129ZM11.9779 11.9H9.9135V8.67097C9.9135 7.90323 9.89082 6.8871 8.82461 6.8871C7.73571 6.8871 7.57691 7.74516 7.57691 8.60323V11.9H5.51254V5.23871H7.53154V6.16452H7.55423C7.84914 5.62258 8.50701 5.08065 9.52785 5.08065C11.6376 5.08065 12.0232 6.43548 12.0232 8.2871V11.9H11.9779Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <p class="text-base text-body-color">&copy; 2023 poinweb.id</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="absolute left-0 bottom-0 z-[-1]">
+          <svg width="217" height="229" viewBox="0 0 217 229" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z" fill="url(#paint0_linear_1179_5)" />
+            <defs>
+              <linearGradient id="paint0_linear_1179_5" x1="76.5" y1="281" x2="76.5" y2="1.22829e-05" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3056D3" stop-opacity="0.08" />
+                <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="absolute top-10 right-10 z-[-1]">
+          <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
+              fill="url(#paint0_linear_1179_4)"
+            />
+            <defs>
+              <linearGradient id="paint0_linear_1179_4" x1="-1.63917e-06" y1="37.5" x2="75" y2="37.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#13C296" stop-opacity="0.31" />
+                <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+      </div>
+    </footer>
+    <!-- ====== Footer Section End -->
+  </body>
+</html>
