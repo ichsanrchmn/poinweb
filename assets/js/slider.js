@@ -1,38 +1,73 @@
-// currentSlideID = 1;
+const carousel = document.querySelector(".carousel");
+firstImg = document.querySelectorAll(".carousel-img")[0];
+arrowIcons = document.querySelectorAll(".wrapper i");
 
-// sliderElement = document.getElementById('slider');
-// totalSlides = sliderElement.childElementCount;
+let isDragStart = false,
+  isDragging = false,
+  prevPageX,
+  prevScrollLeft,
+  positionDiff;
 
-// function next() {
-// 	if (currentSlideID < totalSlides)
-// 	currentSlideID++;
-// 	showSlide()
-// }
+const showHideIcons = () => {
+  let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+  arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+  arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+};
 
-// function prev() {
-// 	if (currentSlideID > 1)
-// 	currentSlideID--;
-// 	showSlide()
-// }
+arrowIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let firstImgWidth = firstImg.clientWidth + 26;
+    carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+    setTimeout(() => showHideIcons(), 60);
+  });
+});
 
-// function showSlide() {
-//   slides = document.getElementById('slider').getElementsByTagName('li')
-//   for (let i = 0; i < totalSlides; i++) {
-//     const element = slides[i];
-//     if (currentSlideID===i+1) {
-//       element.classList.remove('hidden');
-// 			element.classList.add('ease-in-out');
-//     } else {
-//       element.classList.add('hidden');
-//     }
-//   }
-// }
+const autoSlide = () => {
+  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth) return;
 
-let counter = 1;
-setInterval(function () {
-  document.getElementById("nav" + counter).checked = true;
-  counter++;
-  if (counter > 4) {
-    counter = 1;
+  positionDiff = Math.abs(positionDiff);
+  let firstImgWidth = firstImg.clientWidth + 26;
+  let valDifference = firstImgWidth - positionDiff;
+
+  if (carousel.scrollLeft > prevScrollLeft) {
+    return (carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
   }
-}, 4000);
+  carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+};
+
+const dragStart = (e) => {
+  // updating global variables value on mouse down event
+  isDragStart = true;
+  prevPageX = e.pageX || e.touches[0].pageX;
+  prevScrollLeft = carousel.scrollLeft;
+};
+
+const dragging = (e) => {
+  // scrolling images to left according to mouse pointer
+  if (!isDragStart) return;
+  e.preventDefault();
+  isDragging = true;
+  carousel.classList.add("dragging");
+  positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+  carousel.scrollLeft = prevScrollLeft - positionDiff;
+  showHideIcons();
+};
+
+const dragStop = () => {
+  isDragStart = false;
+  carousel.classList.remove("dragging");
+  if (!isDragging) return;
+  isDragging = false;
+  autoSlide();
+};
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+
+carousel.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
+carousel.addEventListener("mouseup", dragStop);
+
+carousel.addEventListener("mouseleave", dragStop);
+carousel.addEventListener("touchend", dragStop);
