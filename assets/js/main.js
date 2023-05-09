@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectHeader = document.querySelector("#header");
   if (selectHeader) {
     document.addEventListener("scroll", () => {
-      window.scrollY > 100
-        ? selectHeader.classList.add("sticked")
-        : selectHeader.classList.remove("sticked");
+      window.scrollY > 100 ? selectHeader.classList.add("sticked") : selectHeader.classList.remove("sticked");
     });
   }
 
@@ -28,10 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let position = window.scrollY;
       if (navbarlink.hash != "#header") position += 200;
 
-      if (
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-      ) {
+      if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
         navbarlink.classList.add("active");
       } else {
         navbarlink.classList.remove("active");
@@ -51,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (selectHeader.classList.contains("sticked")) {
       offset = document.querySelector("#header.sticked").offsetHeight;
     } else if (selectHeader.hasAttribute("data-scrollto-offset")) {
-      offset =
-        selectHeader.offsetHeight -
-        parseInt(selectHeader.getAttribute("data-scrollto-offset"));
+      offset = selectHeader.offsetHeight - parseInt(selectHeader.getAttribute("data-scrollto-offset"));
     }
     window.scrollTo({
       top: document.querySelector(el).offsetTop - offset,
@@ -101,9 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollTop = document.querySelector(".scroll-top");
   if (scrollTop) {
     const toggleScrollTop = () => {
-      window.scrollY > 100
-        ? scrollTop.classList.remove("hidden")
-        : scrollTop.classList.add("hidden");
+      window.scrollY > 100 ? scrollTop.classList.remove("hidden") : scrollTop.classList.add("hidden");
     };
     window.addEventListener("load", toggleScrollTop);
     document.addEventListener("scroll", toggleScrollTop);
@@ -144,8 +135,7 @@ let isDragStart = false,
 const showHideIcons = () => {
   let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
   arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-  arrowIcons[1].style.display =
-    carousel.scrollLeft == scrollWidth ? "none" : "block";
+  arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
 };
 
 arrowIcons.forEach((icon) => {
@@ -157,19 +147,16 @@ arrowIcons.forEach((icon) => {
 });
 
 const autoSlide = () => {
-  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth)
-    return;
+  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth) return;
 
   positionDiff = Math.abs(positionDiff);
   let firstImgWidth = firstImg.clientWidth + 26;
   let valDifference = firstImgWidth - positionDiff;
 
   if (carousel.scrollLeft > prevScrollLeft) {
-    return (carousel.scrollLeft +=
-      positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
+    return (carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
   }
-  carousel.scrollLeft -=
-    positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+  carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
 };
 
 const dragStart = (e) => {
