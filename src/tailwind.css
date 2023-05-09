@@ -429,7 +429,7 @@ input[type="radio"]:checked ~ .box span {
 }
 
 .header.sticked {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 2px 20px rgba(#9ca3af, 0.1);
 }
 

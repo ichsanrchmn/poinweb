@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   const scrollTop = document.querySelector(".scroll-top");
   if (scrollTop) {
-    const toggleScrollTop = function () {
+    const toggleScrollTop = () => {
       window.scrollY > 100
         ? scrollTop.classList.remove("hidden")
         : scrollTop.classList.add("hidden");
