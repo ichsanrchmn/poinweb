@@ -1,0 +1,612 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Infra", "Inter", sans-serif;
+  src: local("Infra"), url(../assets/fonts/Infra/InfraRegular.otf) format("ttf");
+}
+
+.navbar-wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+}
+
+.snap {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap::-webkit-scrollbar {
+  display: none;
+}
+
+.snap > img {
+  scroll-snap-align: center;
+}
+
+.navbarTogglerActive > span:nth-child(1) {
+  @apply top-[7px] rotate-45;
+}
+
+.navbarTogglerActive > span:nth-child(2) {
+  @apply opacity-0;
+}
+
+.navbarTogglerActive > span:nth-child(3) {
+  @apply -top-2 rotate-[135deg];
+}
+
+input:checked ~ .dot {
+  @apply translate-x-full bg-primary;
+}
+
+input:checked ~ .dot .active {
+  @apply block;
+}
+
+input:checked ~ .dot .inactive {
+  @apply hidden;
+}
+
+input#toggleFour:checked ~ .box {
+  @apply bg-primary;
+}
+
+input#toggleFour:checked ~ .dot {
+  @apply translate-x-full bg-white;
+}
+
+input#toggleFive:checked ~ .dot {
+  @apply translate-x-full bg-white;
+}
+
+input#toggleFive:checked ~ .dot > span {
+  @apply bg-primary;
+}
+
+input#toggleSix:checked ~ .dot {
+  @apply translate-x-full bg-white;
+}
+
+input#toggleEight:checked ~ .box {
+  @apply bg-[#EAEEFB];
+}
+
+input#toggleEight:checked ~ .dot {
+  @apply bg-primary;
+}
+
+input#toggleEight:checked ~ .dot span {
+  @apply border-white bg-primary;
+}
+
+input#toggleNine:checked ~ .dot span {
+  @apply bg-white;
+}
+
+input#toggleNine:checked ~ .dot {
+  @apply bg-primary;
+}
+
+input:checked ~ .box {
+  @apply border-primary;
+}
+
+input#checkboxLabelOne:checked ~ .box {
+  @apply border-primary;
+}
+
+input#checkboxLabelOne:checked ~ .box .dot {
+  @apply bg-primary;
+}
+
+input#checkboxLabelTwo:checked ~ .box span {
+  @apply opacity-100;
+}
+
+input#checkboxLabelThree:checked ~ .box span {
+  @apply opacity-100;
+}
+
+input#checkboxLabelFour:checked ~ .box {
+  @apply border-primary;
+}
+
+input#checkboxLabelFour:checked ~ .box span {
+  @apply bg-primary;
+}
+
+input#checkboxLabelFive:checked ~ .box {
+  @apply bg-primary;
+}
+
+.shape-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(196, 196, 196, 0) 100%
+  );
+}
+
+/* v-2.0 start from here */
+.container {
+  @apply mx-auto px-4;
+}
+input[type="checkbox"]:checked ~ .box span {
+  @apply opacity-100;
+}
+
+input[type="radio"]:checked ~ .box .circle {
+  @apply bg-primary;
+}
+
+input[type="radio"]:checked ~ .box span {
+  @apply opacity-100;
+}
+
+.payment:checked ~ label {
+  @apply border-primary bg-primary bg-opacity-[8%];
+}
+
+.shipping:checked ~ label {
+  @apply border-primary;
+}
+
+.shipping:checked ~ label .title {
+  @apply text-primary;
+}
+
+.color:checked ~ label span {
+  @apply h-2 w-2;
+}
+
+.productColor:checked ~ label span {
+  @apply h-7 w-7;
+}
+
+.productColor2:checked ~ label span {
+  @apply h-3 w-3;
+}
+
+.filter-size:checked ~ label {
+  @apply border-primary bg-primary text-white;
+}
+
+.filter-size-2:checked ~ label {
+  @apply border-primary bg-primary bg-opacity-10;
+}
+
+.ram-size:checked ~ label {
+  @apply border-primary text-primary;
+}
+
+.download-radio:checked ~ label {
+  @apply border-primary bg-primary;
+}
+.download-radio:checked ~ label span {
+  @apply text-white;
+}
+.download-radio:checked ~ label .icon {
+  @apply opacity-100;
+}
+
+/* ============
+=============== */
+
+.priceSlideOne .noUi-target {
+  @apply mt-8 border-none bg-[#f4f7ff] shadow-none;
+}
+
+.priceSlideOne .noUi-connects {
+  @apply h-[6px] rounded-full bg-[#D4D9E8];
+}
+
+.priceSlideOne .noUi-connect {
+  @apply h-[6px] rounded-full bg-primary;
+}
+
+.priceSlideOne .noUi-horizontal .noUi-handle {
+  @apply -top-2 h-[22px] w-[22px] rounded-full border-[6px] border-primary bg-white;
+}
+
+.priceSlideTwo .noUi-target {
+  @apply mt-8 border-none bg-white shadow-none;
+}
+
+.priceSlideTwo .noUi-connects {
+  @apply h-1 rounded-full bg-[#D4D9E8];
+}
+
+.priceSlideTwo .noUi-connect {
+  @apply h-1 rounded-full bg-primary;
+}
+
+.priceSlideTwo .noUi-horizontal .noUi-handle {
+  @apply -top-3 h-[30px] w-[30px] rounded-full border border-primary bg-white;
+}
+
+.noUi-horizontal .noUi-handle:after,
+.noUi-horizontal .noUi-handle:before {
+  @apply hidden;
+}
+
+#activityChart .apexcharts-legend-series {
+  @apply !mr-5;
+}
+
+/* ======= Switch ======= */
+.autoSaverSwitch input:checked ~ .slider {
+  @apply bg-primary;
+}
+.autoSaverSwitch input:checked ~ .slider .dot {
+  @apply translate-x-6;
+}
+.autoSaverSwitch input:checked ~ .label .on {
+  @apply block;
+}
+.autoSaverSwitch input:checked ~ .label .off {
+  @apply hidden;
+}
+
+.themeSwitcherTwo input:checked ~ .light {
+  @apply bg-transparent text-body-color;
+}
+.themeSwitcherTwo input:checked ~ .dark {
+  @apply bg-gray text-primary;
+}
+
+.themeSwitcherTwo input:checked ~ .slider {
+  @apply bg-black;
+}
+.themeSwitcherTwo input:checked ~ .slider .dot {
+  @apply translate-x-[28px];
+}
+
+.themeSwitcherThree input:checked ~ div .light {
+  @apply bg-white text-body-color;
+}
+.themeSwitcherThree input:checked ~ div .dark {
+  @apply bg-primary text-white;
+}
+
+/* box-select-1 */
+
+.checkbox-list:checked ~ label {
+  @apply border-primary bg-primary;
+}
+
+.checkbox-list:checked ~ label .icon {
+  @apply opacity-100;
+}
+
+.box-select-1:checked ~ label .box {
+  @apply border-primary bg-primary;
+}
+.box-select-1:checked ~ label .box .icon {
+  @apply opacity-100;
+}
+.box-select-1:checked ~ label div.user-box {
+  @apply bg-gray-2;
+}
+
+.select-list:checked ~ label {
+  @apply border-primary text-primary;
+}
+.select-list:checked ~ label .icon {
+  @apply bg-primary;
+}
+
+.tableCheckbox:checked ~ label .icon-box {
+  @apply border-primary bg-primary;
+}
+
+.tableCheckbox:checked ~ label .icon {
+  @apply opacity-100;
+}
+
+.tableCheckbox-2:checked ~ label {
+  @apply border-primary bg-primary;
+}
+.tableCheckbox-2:checked ~ label .icon {
+  @apply text-white opacity-100;
+}
+
+/* Maps */
+.jvm-zoom-btn {
+  @apply top-auto bottom-0 left-auto flex h-8 w-8 items-center justify-center rounded border-[.5px] border-stroke bg-gray font-semibold leading-none text-body-color hover:border-primary hover:bg-primary hover:text-white;
+}
+
+.mapOne .jvm-zoom-btn {
+  @apply top-auto bottom-0 left-auto;
+}
+.mapOne .jvm-zoom-btn.jvm-zoomin {
+  @apply right-9;
+}
+.mapOne .jvm-zoom-btn.jvm-zoomout {
+  @apply right-0;
+}
+
+.mapTwo .jvm-zoom-btn {
+  @apply top-auto bottom-0;
+}
+
+.mapTwo .jvm-zoom-btn.jvm-zoomin {
+  @apply left-0;
+}
+.mapTwo .jvm-zoom-btn.jvm-zoomout {
+  @apply left-9;
+}
+
+.mapFour .jvm-zoom-btn {
+  @apply -top-20;
+}
+.mapFour .jvm-zoom-btn.jvm-zoomin {
+  @apply right-9;
+}
+.mapFour .jvm-zoom-btn.jvm-zoomout {
+  @apply right-0;
+}
+
+.wrapper .carousel {
+  scroll-behavior: smooth;
+}
+
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  background: #438ed47c;
+  line-height: 46px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper i:first-child {
+  left: -23px;
+  display: none;
+}
+
+.wrapper i:last-child {
+  right: -23px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.header.sticked {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 2px 20px rgba(#9ca3af, 0.1);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  font-size: 16px;
+  color: #cbd5e1;
+  background: #438ed4;
+  padding: 8px 23px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-family: #438ed4;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: #cbd5e1;
+  background: rgba(#cbd5e1, 0.85);
+}
+
+@media (max-width: 1279px) {
+  .header .btn-getstarted,
+  .header .btn-getstarted:focus {
+    margin-right: 50px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Desktop Navigation 
+--------------------------------------------------------------*/
+@media (min-width: 1280px) {
+  .navbar {
+    padding: 0;
+    position: relative;
+  }
+
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navbar li {
+    position: relative;
+  }
+
+  .navbar > ul > li {
+    white-space: nowrap;
+  }
+
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover > a {
+    color: #438ed4;
+  }
+}
+
+/*--------------------------------------------------------------
+# Mobile Navigation
+--------------------------------------------------------------*/
+@media (max-width: 1279px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: calc(100% - 70px);
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 9997;
+  }
+
+  .navbar ul {
+    position: relative;
+    inset: 0;
+    padding: 251px 80px 320px;
+    margin: 0 -70px 0 0;
+    background: rgba(255, 255, 255, 0.9);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+  }
+
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(#cbd5e1, 0.7);
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover > a {
+    color: #438ed4;
+  }
+
+  .navbar .dropdown ul,
+  .navbar .dropdown .dropdown ul {
+    position: static;
+    display: none;
+    padding: 10px 0;
+    margin: 10px 20px;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(#9ca3af, 0.3);
+  }
+
+  .navbar .dropdown > .dropdown-active,
+  .navbar .dropdown .dropdown > .dropdown-active {
+    display: block;
+  }
+
+  .mobile-nav-toggle {
+    display: block !important;
+    color: #9ca3af;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 0;
+    transition: 0.5s;
+    position: fixed;
+    top: 32px;
+    z-index: 9999;
+    right: 20px;
+  }
+
+  .mobile-nav-toggle.bi-x {
+    color: #9ca3af;
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+    z-index: 9995;
+    position: relative;
+  }
+
+  .mobile-nav-active .navbar {
+    left: 0;
+  }
+
+  .mobile-nav-active .navbar:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(#9ca3af, 0.8);
+    z-index: 9996;
+  }
+}
