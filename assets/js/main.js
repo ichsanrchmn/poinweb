@@ -215,4 +215,5 @@ blankButtons.forEach((blankButton) => {
   blankButton.addEventListener("click", (event) => {
     event.preventDefault();
   });
+  history.replaceState(null, null, window.location.pathname);
 });
