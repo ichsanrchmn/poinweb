@@ -44,6 +44,7 @@
     "url": "https://github.com/TailGrids/tailwind-ui-components"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001486",
     "tailgrids": "^1.1.6"
   }
 }
