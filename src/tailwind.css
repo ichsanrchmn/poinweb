@@ -1,4 +1,4 @@
-@import url("/assets/fonts/Infra/InfraRegular.otf");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -125,7 +125,11 @@ input#checkboxLabelFive:checked ~ .box {
 }
 
 .shape-gradient {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(196, 196, 196, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(196, 196, 196, 0) 100%
+  );
 }
 
 /* v-2.0 start from here */
