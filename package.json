@@ -1,5 +1,5 @@
 {
-  "name": "tailgrids",
+  "name": "poinweb",
   "version": "2.0.1",
   "main": "index.js",
   "license": "MIT",
@@ -21,14 +21,12 @@
     "landing-page",
     "blocks",
     "free",
-    "tailgrids",
     "tailwind-ui",
     "tailwind-css-sections"
   ],
-  "author": "TailGrids Team <hello@tailgrids.com> (https://tailgrids.com/)",
-  "homepage": "https://tailgrids.com/",
+  "author": "Poinweb Team (https://poinweb.com/)",
+  "homepage": "https://poinweb.com/",
   "description": "Handcrafted Library of Tailwind CSS UI Components & Blocks.",
-  "bugs": "https://github.com/TailGrids/tailwind-ui-components/issues",
   "scripts": {
     "build-css": "npx tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.css -w"
   },
@@ -41,10 +39,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TailGrids/tailwind-ui-components"
+    "url": "https://github.com/ichsanrchmn/poinweb"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001486",
-    "tailgrids": "^1.1.6"
+    "caniuse-lite": "^1.0.30001486"
   }
 }

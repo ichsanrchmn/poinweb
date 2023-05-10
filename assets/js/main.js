@@ -199,7 +199,7 @@ carousel.addEventListener("touchend", dragStop);
 const blankButtons = document.querySelectorAll(".blank-btn");
 
 blankButtons.forEach((blankButton) => {
-  blankButton.addEventListener("click", (event) => {
+  blankButton.addEventListener("click", { passive: true }, (event) => {
     event.preventDefault();
   });
   history.replaceState(null, null, window.location.pathname);

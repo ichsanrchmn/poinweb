@@ -49,5 +49,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("tailgrids/plugin")],
+  plugins: [require("./plugin")],
 };
